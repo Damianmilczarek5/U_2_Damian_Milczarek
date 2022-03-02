@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swedish cities</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>city database</h1>
+
+    <form id="add-city-form">
+        <input id="name" type="text" placeholder="Name">
+        <input id="population" type="number" placeholder="Population">
+        <input id="county" type="text" placeholder="County">
+        <input id="attraction" type="text" placeholder="Attraction">
+        <button>Add</button>
+    </form>
+
+    <div id="filters">
+        <form id="filter-by-population">
+            <input id="filter-population" type="text" placeholder="Filter by population">
+            <button>Filter</button>
+        </form>
+
+        <form id="filter-by-county">
+            <input id="filter-county" type="number" placeholder="Filter by county">
+            <button>Filter</button>
+        </form>
+
+        <button id="show-all" type="button">Show all</button>
+    </div>
+
+    <div id="headers">
+        <div>number</div>
+        <div>Name</div>
+        <div>population</div>
+        <div>county</div>
+        <div>attraction</div>
+        <div>Actions</div>
+        
+    </div>
+
+    <div id="cities"></div>
+
+    <script src="database.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
