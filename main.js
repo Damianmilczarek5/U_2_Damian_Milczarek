@@ -101,12 +101,23 @@ function onRemoveCityClick(event) {
  let citiesByPopulation = [];
 
  for (let city of cities) {
-     if (city.population.toLowerCase() == population.toLowerCase()) {
-         citiesByPopulation
+     if(city.population == population) {
+         citiesByPopulation.push(city);
      }
  }
  return citiesByPopulation;
-  }
+}
+
+  function getCitiesByCounty(cities, county) {
+    let citiesByCounty = [];
+   
+    for (let city of cities) {
+        if (city.county.toLowerCase() == county.toLowerCase()) {
+            citiesByCounty.push(city);
+        }
+    }
+    return citiesByCounty;
+     }
 
   function onFilterByPopulationSubmit(event) {
       //prevents from the form sending us to a new page 
@@ -119,6 +130,33 @@ function onRemoveCityClick(event) {
       renderCities(cities);
   }
 
+  function onFilterByCountySubmit(event) {
+    event.preventDefault();
+    let county = document.getElementById("filter-county").value;
+    // Get the cities by population
+    let cities = getCitiesByCounty(database, county);
+    // Re-render them
+    renderCities(cities);
+  }
+  
+  function onShowAllClick() {
+    document.getElementById("filter-population").value = "";
+    document.getElementById("filter-county").value = "";
+    renderCities(database);
+  }
+
+
+  function setFiltercityHandlers() {
+    let populationForm = document.getElementById("filter-by-population");
+    let countyForm = document.getElementById("filter-by-county");
+    let showAll = document.getElementById("show-all");
+  
+    populationForm.addEventListener("submit", onFilterByPopulationSubmit);
+    countyForm.addEventListener("submit", onFilterByCountySubmit);
+    showAll.addEventListener("click", onShowAllClick);
+  }
+
 // initialazing the page 
 renderCities(database);
 setAddCityHandler();
+setFiltercityHandlers();
