@@ -1,0 +1,62 @@
+body {
+    margin: 0 auto;
+    max-width: 600px;
+    font-family: Courier;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #add-city-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 100px 60px;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #aaa;
+  }
+  
+  #filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 15px;
+    gap: 15px;
+  }
+  
+  #filter-by-population,
+  #filter-by-county {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+  
+  #headers {
+    padding: 10px 20px;
+    border-bottom: 1px solid #aaa;
+    background: beige;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  #cities {
+    background: beige;
+    padding: 10px;
+  }
+  
+  .city {
+    padding: 10px 10px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .city div {
+    /* Center vertically */
+    display: flex;
+    align-items: center;
+  }
+  
+  .city:nth-child(odd) {
+    background: #fffff0;
+  }
+  
