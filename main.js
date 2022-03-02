@@ -58,6 +58,21 @@ function onAddCitiesSubmit(event) {
   let population = document.getElementById("population").value;
   let county = Number(document.getElementById("county").value);
   let attraction = document.getElementById("attraction").value;
+  // alerts user if he didnt fill out whole form 
+  if (name == ""){
+    return alert("Please fill out all the information required")
+  }
+
+else if (population == ""){
+  return alert("Please fill out all the information required")
+}
+else if (county == ""){
+  return alert("Please fill out all the information required")
+}
+else if (attraction == ""){
+  return alert("Please fill out all the information required")
+}
+
 // uses previous function that creates a new city 
   let city = createNewCity(name, population, county, attraction);
 
@@ -76,7 +91,7 @@ function onAddCitiesSubmit(event) {
 function setAddCityHandler() {
     let form = document.getElementById("add-city-form");
   form.addEventListener("submit", onAddCitiesSubmit);
-} 
+}
 
 // When a user clicks the remove-city-button
 function onRemoveCityClick(event) {
