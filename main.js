@@ -48,3 +48,33 @@ function renderCities(cities) {
   // Add remove-handlers for our cities
   setRemovecityHandlers();
 }
+
+// adds the city created in the form to the website 
+function onAddCitiesSubmit(event) {
+    // prevents the filled form to send us to a new page 
+    event.preventDefault(); 
+// made variables for all of city attributes that are inside HTML 
+  let name = document.getElementById("name").value;
+  let population = document.getElementById("population").value;
+  let county = Number(document.getElementById("county").value);
+  let attraction = document.getElementById("attraction").value;
+// uses previous function that creates a new city 
+  let city = createNewcity(name, population, county, attraction);
+
+  // Calculates the newly created cities ID
+  city.id = database[database.length - 1].id + 1;
+// calls functions to add cities to database and render them into HTML 
+  addcityToDatabase(database, city);
+  rendercities(database);
+
+  // empty all form fields
+  let form = document.getElementById("add-city-form");
+  form.reset();
+}
+
+// adds click event  handler to the add button 
+function setAddCityHandler() {
+    let form = document.getElementById("add-city-form");
+  form.addEventListener("submit", onAddCitiesSubmit);
+} 
+
