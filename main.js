@@ -29,7 +29,7 @@ function renderCity(city) {
         <div>${city.population}</div>
         <div>${city.county}</div>
         <div>${city.attraction}</div>
-        <button type="button">Remove</button>
+        <button type="button" class="remove">Remove</button>
     `;
 
   return div;

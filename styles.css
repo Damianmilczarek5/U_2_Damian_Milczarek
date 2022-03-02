@@ -1,22 +1,28 @@
 body {
     margin: 0 auto;
     max-width: 600px;
-    font-family: Courier;
+    font-family: times, "Times New Roman";
+    background-color: lightblue;
   }
   
   h1 {
     text-align: center;
   }
-  
+
   #add-city-form {
     display: grid;
-    grid-template-columns: 1fr 1fr 100px 60px;
+    grid-template-columns: 115px 115px 115px 115px 1fr;
     gap: 10px;
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid #aaa;
   }
-  
+
+  #add {
+    display: grid;
+    width: 100px
+  }
+
   #filters {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -24,19 +30,20 @@ body {
     gap: 15px;
   }
   
-  #filter-by-population,
-  #filter-by-county {
+  #filter-by-county,
+  #filter-by-population {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
   }
   
   #headers {
-    padding: 10px 20px;
+    padding: 10px 10px;
     border-bottom: 1px solid #aaa;
     background: beige;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
   }
   
   #cities {
@@ -48,10 +55,10 @@ body {
     padding: 10px 10px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
   }
   
   .city div {
-    /* Center vertically */
     display: flex;
     align-items: center;
   }
@@ -59,4 +66,36 @@ body {
   .city:nth-child(odd) {
     background: #fffff0;
   }
+
+  input {
+    padding: 5px;
+    border: 0px;
+    border-radius: 10px;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.2);
+  font-family: times, "Times New Roman";
+  }
   
+  input:focus {
+    background-color: lightblue;
+  }
+
+button {
+    background-color: #fff000;
+    border-radius: 12px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 10px;
+    transition: 0.3s;
+    border: 0;
+    font-size: 16px;
+  }
+
+  button:hover { 
+    background: #f4e603;
+    box-shadow: 2px 2px rgba(0,0,0,.2)
+  }
+  
+  .remove {
+font-size: 15px;
+  }
