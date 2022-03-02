@@ -88,6 +88,21 @@ function onRemoveCityClick(event) {
     renderCities(database);
   }
   
+  // removes a city based on its id 
+  function removeCityById(cities, id) {
+      // simple loop that goes throught the length of our database
+    for (let i = 0; i < cities.length; i++) {
+        // This is the current city of our loop
+        let city = cities[i];
+        // Check if this cities name is the same as the name that the function received
+        if (city.id == id) {
+          // If so, remove the city from the array
+          cities.splice(i, 1);
+          return;
+        }
+      }
+  }
+
   //  "click" event handler for all remove buttons 
   function setRemoveCityHandlers() {
     let buttons = document.querySelectorAll(".city button");
