@@ -97,6 +97,28 @@ function onRemoveCityClick(event) {
     }
   }
 
+  function getCitiesByPopulation(cities, population) {
+ let citiesByPopulation = [];
+
+ for (let city of cities) {
+     if (city.population.toLowerCase() == population.toLowerCase()) {
+         citiesByPopulation
+     }
+ }
+ return citiesByPopulation;
+  }
+
+  function onFilterByPopulationSubmit(event) {
+      //prevents from the form sending us to a new page 
+      event.preventDefault();
+
+      let population = document.getElementById("filter-population").value;
+      // Get the cities by population thanks to the earlier function 
+      let cities = getCitiesByPopulation(database, population);
+      // Re-render them
+      renderCities(cities);
+  }
+
 // initialazing the page 
 renderCities(database);
 setAddCityHandler();
