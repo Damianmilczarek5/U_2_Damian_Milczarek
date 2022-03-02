@@ -42,11 +42,11 @@ function renderCities(cities) {
 
   // made a for loop that goes throught all cities and inserts them into HTML 
   for (let city of cities) {
-    let cityElement = rendercity(city);
+    let cityElement = renderCity(city);
     citiesElement.appendChild(cityElement);
   }
   // Add remove-handlers for our cities
-  setRemovecityHandlers();
+  setRemoveCityHandlers();
 }
 
 // adds the city created in the form to the website 
@@ -59,13 +59,13 @@ function onAddCitiesSubmit(event) {
   let county = Number(document.getElementById("county").value);
   let attraction = document.getElementById("attraction").value;
 // uses previous function that creates a new city 
-  let city = createNewcity(name, population, county, attraction);
+  let city = createNewCity(name, population, county, attraction);
 
   // Calculates the newly created cities ID
   city.id = database[database.length - 1].id + 1;
 // calls functions to add cities to database and render them into HTML 
-  addcityToDatabase(database, city);
-  rendercities(database);
+  addCityToDatabase(database, city);
+  renderCities(database);
 
   // empty all form fields
   let form = document.getElementById("add-city-form");
@@ -78,3 +78,25 @@ function setAddCityHandler() {
   form.addEventListener("submit", onAddCitiesSubmit);
 } 
 
+// When a user clicks the remove-city-button
+function onRemoveCityClick(event) {
+    let button = event.target;
+    let id = button.parentElement.id;
+    // removes the city in database by its id 
+    removeCityById(database, id);
+    // Re-render (without the newly deleted city)
+    renderCities(database);
+  }
+  
+  //  "click" event handler for all remove buttons 
+  function setRemoveCityHandlers() {
+    let buttons = document.querySelectorAll(".city button");
+  
+    for (let button of buttons) {
+      button.addEventListener("click", onRemoveCityClick);
+    }
+  }
+
+// initialazing the page 
+renderCities(database);
+setAddCityHandler();
