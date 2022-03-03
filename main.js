@@ -25,7 +25,7 @@ function renderCity(city) {
     div.id = city.id;
 
     div.innerHTML = `
-        <div>${city.name}</div>
+        <li>${city.name}</li>
         <div>${city.population}</div>
         <div>${city.county}</div>
         <div>${city.attraction}</div>
@@ -144,10 +144,12 @@ function onRemoveCityClick(event) {
  return citiesByPopulation;
 }
 
+// filters cities by their county 
   function getCitiesByCounty(cities, county) {
     let citiesByCounty = [];
    
     for (let city of cities) {
+      // filters the word typed in form and then "Pushes" it, aswell as makes sure to filter even if lower or upper case is misplaced
         if (city.county.toString().toLowerCase() == county.toString().toLowerCase()) {
             citiesByCounty.push(city);
         }
@@ -166,6 +168,7 @@ function onRemoveCityClick(event) {
       renderCities(cities);
   }
 
+  // renders the filtered county
   function onFilterByCountySubmit(event) {
     event.preventDefault();
 
@@ -176,13 +179,14 @@ function onRemoveCityClick(event) {
     renderCities(cities);
   }
   
+  // resets all filter forms
   function onShowAllClick() {
     document.getElementById("filter-population").value = "";
     document.getElementById("filter-county").value = "";
     renderCities(database);
   }
 
-
+// adds events when submitting and clicking on filter forms and button
   function setFiltercityHandlers() {
     let populationForm = document.getElementById("filter-by-population");
     let countyForm = document.getElementById("filter-by-county");

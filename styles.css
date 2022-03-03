@@ -38,11 +38,11 @@ body {
   }
   
   #headers {
-    padding: 10px 10px;
+    padding: 10px 20px;
     border-bottom: 1px solid #aaa;
     background: beige;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     column-gap: 30px;
   }
   
@@ -52,10 +52,10 @@ body {
   }
   
   .city {
-    padding: 10px 10px;
+    padding: 10px 20px;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    column-gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 30px;
   }
   
   .city div {
