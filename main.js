@@ -153,7 +153,8 @@ function onRemoveCityClick(event) {
     let citiesByCounty = [];
    
     for (let city of cities) {
-      // filters the word typed in form and then "Pushes" it, aswell as makes sure to filter even if lower or upper case is misplaced
+      // filters the word typed in form and then "Pushes" it, 
+      // aswell as makes sure to filter even if lower or upper case is misplaced
         if (city.county.toString().toLowerCase() == county.toString().toLowerCase()) {
             citiesByCounty.push(city);
         }

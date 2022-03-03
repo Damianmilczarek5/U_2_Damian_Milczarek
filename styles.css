@@ -2,16 +2,17 @@ body {
     margin: 0 auto;
     max-width: 600px;
     font-family: times, "Times New Roman";
-    background-color: lightblue;
+    background-color: #222f5b;
   }
   
   h1 {
     text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
   }
 
   #add-city-form {
     display: grid;
-    grid-template-columns: 115px 115px 115px 115px 1fr;
+    grid-template-columns: 90px 140px 115px 115px 1fr;
     gap: 10px;
     margin-bottom: 15px;
     padding-bottom: 15px;
@@ -39,23 +40,28 @@ body {
   
   #headers {
     padding: 10px 20px;
-    border-bottom: 1px solid #aaa;
-    background: beige;
+    border-bottom: 2px solid #b97c21;
+    background: #946b2d;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     column-gap: 30px;
+    border-radius: 30px;
   }
   
   #cities {
-    background: beige;
+    background: #946b2d;
     padding: 10px;
+    color: #0e1a40;
+    font-weight: bolder;
+    border-radius: 30px;
   }
   
   .city {
-    padding: 10px 20px;
+    padding: 10px 10px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     column-gap: 30px;
+    border-radius: 20px;
   }
   
   .city div {
@@ -64,7 +70,7 @@ body {
   }
   
   .city:nth-child(odd) {
-    background: #fffff0;
+    background: #b97c21;
   }
 
   input {
@@ -99,3 +105,13 @@ button {
   .remove {
 font-size: 15px;
   }
+
+  ol { 
+    counter-reset: item;
+    list-style-type: none;
+}
+li { display: block; }
+li:before { 
+    content: counter(item) "  "; 
+    counter-increment: item 
+}
