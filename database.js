@@ -11,7 +11,7 @@ let database = [
       name: "Malmö",
       population: 350000,
       county: "Skåne",
-      attraction: "Turning torso",
+      attraction: "Turning Torso",
     },
     {
       id: 3,
