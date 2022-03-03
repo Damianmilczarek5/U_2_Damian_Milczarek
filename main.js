@@ -148,7 +148,7 @@ function onRemoveCityClick(event) {
     let citiesByCounty = [];
    
     for (let city of cities) {
-        if (city.county.toLowerCase() == county.toLowerCase()) {
+        if (city.county.toString().toLowerCase() == county.toString().toLowerCase()) {
             citiesByCounty.push(city);
         }
     }
@@ -168,6 +168,7 @@ function onRemoveCityClick(event) {
 
   function onFilterByCountySubmit(event) {
     event.preventDefault();
+
     let county = document.getElementById("filter-county").value;
     // Get the cities by population
     let cities = getCitiesByCounty(database, county);
