@@ -72,7 +72,8 @@ else if (county == ""){
 else if (attraction == ""){
   return alert("Please fill out all the information required")
 }
-
+// user has to confirm if he want to add a new city 
+else if (confirm("are you sure you want to add?") == true) {
 // uses previous function that creates a new city 
   let city = createNewCity(name, population, county, attraction);
 
@@ -85,6 +86,9 @@ else if (attraction == ""){
   // empty all form fields
   let form = document.getElementById("add-city-form");
   form.reset();
+}
+
+
 }
 
 // adds click event  handler to the add button 
