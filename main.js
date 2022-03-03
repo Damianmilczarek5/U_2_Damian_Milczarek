@@ -95,12 +95,19 @@ function setAddCityHandler() {
 
 // When a user clicks the remove-city-button
 function onRemoveCityClick(event) {
+  //confirm method pops up when user click on delete button 
+  if (confirm("are you sure you want to delete?") == true ){ 
+    // is user click on OK the element gets deleted from the database
     let button = event.target;
     let id = button.parentElement.id;
     // removes the city in database by its id 
     removeCityById(database, id);
     // Re-render (without the newly deleted city)
     renderCities(database);
+  } 
+  // if user click cancel nothing happens
+    else return false;
+   
   }
   
   // removes a city based on its id 
@@ -121,7 +128,6 @@ function onRemoveCityClick(event) {
   //  "click" event handler for all remove buttons 
   function setRemoveCityHandlers() {
     let buttons = document.querySelectorAll(".city button");
-  
     for (let button of buttons) {
       button.addEventListener("click", onRemoveCityClick);
     }
