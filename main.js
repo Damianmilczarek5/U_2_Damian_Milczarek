@@ -76,9 +76,16 @@ else if (attraction == ""){
 else if (confirm("are you sure you want to add?") == true) {
 // uses previous function that creates a new city 
   let city = createNewCity(name, population, county, attraction);
-
+  
+  // adds a id to newly created city 
+  if (database.length = database.length) {
+    city.id = database[database.length - 1].id + 1; 
+} 
+else {
+  // makes it so you can add a new city even if database is empty
+    city.id = 1; 
+}
   // Calculates the newly created cities ID
-  city.id = database[database.length - 1].id + 1;
 // calls functions to add cities to database and render them into HTML 
   addCityToDatabase(database, city);
   renderCities(database);
